@@ -1,294 +1,33 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Your Name — Portfolio</title>
-  <meta name="description" content="Personal portfolio of Your Name — projects, skills, contact." />
-  <style>
-    :root{
-      --bg:#0f1724;
-      --card:#0b1220;
-      --muted:#9aa4b2;
-      --accent:#06b6d4;
-      --glass: rgba(255,255,255,0.03);
-      --radius:14px;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background:linear-gradient(180deg,var(--bg) 0%, #071029 100%);
-      color: #e6eef6;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.4;
-      padding:32px;
-      display:flex;
-      justify-content:center;
-      font-size:16px;
-    }
-
-    .wrap{
-      width:100%;
-      max-width:1100px;
-      display:grid;
-      grid-template-columns: 1fr 340px;
-      gap:28px;
-    }
-
-    @media (max-width:900px){
-      .wrap{grid-template-columns:1fr; padding:0}
-      body{padding:20px}
-    }
-
-    header.card{
-      grid-column:1 / -1;
-      display:flex;
-      align-items:center;
-      gap:20px;
-      padding:20px;
-      background:var(--glass);
-      border-radius:var(--radius);
-      box-shadow:0 8px 30px rgba(2,6,23,0.6);
-      backdrop-filter: blur(6px);
-    }
-
-    .avatar{
-      width:96px;
-      height:96px;
-      border-radius:12px;
-      background:linear-gradient(135deg,var(--accent),#7c3aed);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:700;
-      font-size:28px;
-      color:#021627;
-    }
-
-    .title h1{margin:0;font-size:20px}
-    .title p{margin:6px 0 0;color:var(--muted);font-size:14px}
-
-    .bio, .projects, .contact, .skills, .side{
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      padding:18px;
-      border-radius:12px;
-      box-shadow: 0 6px 20px rgba(2,6,23,0.45);
-    }
-
-    .bio p{margin:0;color:var(--muted)}
-    .section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .section-title h2{margin:0;font-size:16px}
-    .cta {
-      display:inline-block;
-      padding:8px 12px;
-      border-radius:10px;
-      background:transparent;
-      border:1px solid rgba(255,255,255,0.06);
-      color:var(--accent);
-      text-decoration:none;
-      font-weight:600;
-      font-size:14px;
-    }
-
-    /* Projects grid */
-    .projects-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:12px;
-    }
-    @media (max-width:640px){
-      .projects-grid{grid-template-columns:1fr}
-    }
-
-    .proj{
-      background:var(--card);
-      padding:12px;
-      border-radius:10px;
-      display:flex;
-      gap:12px;
-      align-items:flex-start;
-    }
-    .proj .thumb{
-      width:64px;height:48px;border-radius:8px;background:linear-gradient(135deg,#0ea5a4,#7c3aed);flex:0 0 64px;
-      display:flex;align-items:center;justify-content:center;font-weight:700;color:#021627;
-    }
-    .proj h3{margin:0;font-size:15px}
-    .proj p{margin:6px 0 0;color:var(--muted);font-size:13px}
-
-    /* Sidebar */
-    .side{
-      display:flex;
-      flex-direction:column;
-      gap:14px;
-      height:fit-content;
-    }
-
-    .skills-list{display:flex;flex-wrap:wrap;gap:8px}
-    .skill{padding:8px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-weight:600;font-size:13px;color:var(--muted)}
-
-    .contact a{display:inline-block;margin-right:8px;text-decoration:none;color:var(--muted);font-weight:600}
-    .social{display:flex;gap:10px;align-items:center}
-
-    footer{grid-column:1 / -1;text-align:center;color:var(--muted);font-size:13px;padding-top:8px}
-    /* simple focus styles */
-    a:focus{outline:3px solid rgba(6,182,212,0.18);outline-offset:3px}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Home</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
 </head>
+
 <body>
-  <main class="wrap" role="main">
-    <header class="card" aria-label="Top">
-      <div class="avatar" id="avatar">YN</div>
-      <div class="title">
-        <h1 id="name">Your Name</h1>
-        <p id="role">Computer Science Student. Builder. Problem solver.</p>
-        <p style="margin-top:8px;color:var(--muted);font-size:13px">Based in Texas • Open to internships and collaborations</p>
-      </div>
-      <div style="margin-left:auto;display:flex;gap:10px;align-items:center">
-        <a class="cta" id="resume" href="#" target="_blank" rel="noopener">Resume</a>
-        <a class="cta" id="github" href="https://github.com/YOUR_GITHUB" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </header>
 
-    <section class="bio" aria-labelledby="about-title">
-      <div class="section-title">
-        <h2 id="about-title">About</h2>
-        <span style="color:var(--muted);font-size:13px">Quick</span>
-      </div>
-      <p id="about-text">
-        Hi. I build software and experiments. I focus on projects that combine algorithms, systems, and real world impact.
-        I enjoy learning new tools and shipping small, polished projects end to end.
-      </p>
+<div id="tsparticles"></div>
 
-      <div style="margin-top:12px">
-        <strong>Highlights</strong>
-        <ul style="margin:8px 0 0;padding-left:20px;color:var(--muted);font-size:14px">
-          <li>Strong CS fundamentals and data structures</li>
-          <li>Experience with Python, JavaScript, and C++</li>
-          <li>Projects: full stack apps, robotics experiments, ML prototypes</li>
-        </ul>
-      </div>
-    </section>
+<header>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <button id="modeToggle">☀</button>
+  </nav>
+</header>
 
-    <section class="projects" aria-labelledby="projects-title">
-      <div class="section-title">
-        <h2 id="projects-title">Selected projects</h2>
-        <a id="all-projects" class="cta" href="#" target="_blank" rel="noopener">See on GitHub</a>
-      </div>
+<section class="hero fade">
+  <h1 class="big">Your Name</h1>
+  <p id="role" class="typewriter"></p>
+  <p>CS Student • Texas • Robotics • FPV Drones</p>
+</section>
 
-      <div class="projects-grid" id="projectsGrid">
-        <!-- project cards inserted by script -->
-      </div>
-    </section>
-
-    <aside class="side">
-      <div class="skills" aria-labelledby="skills-title">
-        <div class="section-title">
-          <h2 id="skills-title">Skills</h2>
-        </div>
-        <div class="skills-list" id="skillsList">
-          <!-- inserted by script -->
-        </div>
-      </div>
-
-      <div class="contact" aria-labelledby="contact-title">
-        <div class="section-title">
-          <h2 id="contact-title">Contact</h2>
-        </div>
-        <p style="color:var(--muted);margin:0 0 8px">Email: <a id="email" href="mailto:your.email@example.com">your.email@example.com</a></p>
-        <div class="social" aria-hidden="false">
-          <a id="linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
-          <a id="twitter" href="#" target="_blank" rel="noopener">Twitter</a>
-        </div>
-      </div>
-
-      <div class="card" style="padding:12px;border-radius:10px;background:linear-gradient(180deg,#071125, #041022);">
-        <strong style="display:block;margin-bottom:8px">Quick deploy</strong>
-        <ol style="margin:0 0 0 18px;color:var(--muted);font-size:14px">
-          <li>Replace placeholders below with your info</li>
-          <li>Push this file as <code>index.html</code> to your repo</li>
-          <li>Enable GitHub Pages from repository settings</li>
-        </ol>
-      </div>
-    </aside>
-
-    <footer>
-      <span id="copyright">© <span id="year"></span> Your Name</span>
-    </footer>
-  </main>
-
-  <script>
-    // ====== CONFIGURE THESE ======
-    const CONFIG = {
-      name: "Your Name",
-      initials: "YN",
-      role: "Computer Science Student. Builder. Problem solver.",
-      githubUrl: "https://github.com/YOUR_GITHUB", // change this
-      resumeUrl: "#", // optional
-      email: "your.email@example.com",
-      linkedin: "https://www.linkedin.com/in/YOUR_LINKEDIN",
-      twitter: "https://twitter.com/YOUR_TWITTER",
-      projects: [
-        {
-          title: "Project One",
-          desc: "Short one line description that explains what you built and why.",
-          url: "https://github.com/YOUR_GITHUB/project-one"
-        },
-        {
-          title: "Project Two",
-          desc: "Another project. Mention tech used in 2-4 words.",
-          url: "https://github.com/YOUR_GITHUB/project-two"
-        },
-        {
-          title: "FPV Drone Build",
-          desc: "Freestyle drone build notes and wiring diagrams.",
-          url: "https://github.com/YOUR_GITHUB/fpv-drone"
-        },
-        {
-          title: "ML Prototype",
-          desc: "Prototype with dataset, model and interpretation.",
-          url: "https://github.com/YOUR_GITHUB/ml-prototype"
-        }
-      ],
-      skills: ["Python","JavaScript","C++","React","Node.js","Git","Linux","Algorithms"]
-    };
-
-    // ====== RENDER ======
-    document.getElementById('name').textContent = CONFIG.name;
-    document.getElementById('avatar').textContent = CONFIG.initials;
-    document.getElementById('role').textContent = CONFIG.role;
-    document.getElementById('github').href = CONFIG.githubUrl;
-    document.getElementById('all-projects').href = CONFIG.githubUrl;
-    document.getElementById('resume').href = CONFIG.resumeUrl;
-    document.getElementById('email').textContent = CONFIG.email;
-    document.getElementById('email').href = 'mailto:' + CONFIG.email;
-    document.getElementById('linkedin').href = CONFIG.linkedin;
-    document.getElementById('twitter').href = CONFIG.twitter;
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const projectsGrid = document.getElementById('projectsGrid');
-    CONFIG.projects.forEach(p => {
-      const el = document.createElement('article');
-      el.className = 'proj';
-      el.innerHTML = `
-        <div class="thumb">${(p.title.split(' ').map(w=>w[0]||'').slice(0,2).join('')).toUpperCase()}</div>
-        <div>
-          <h3><a href="${p.url}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">${p.title}</a></h3>
-          <p>${p.desc}</p>
-        </div>
-      `;
-      projectsGrid.appendChild(el);
-    });
-
-    const skillsList = document.getElementById('skillsList');
-    CONFIG.skills.forEach(s => {
-      const sp = document.createElement('span');
-      sp.className = 'skill';
-      sp.textContent = s;
-      skillsList.appendChild(sp);
-    });
-  </script>
+<script src="js/main.js"></script>
 </body>
 </html>
